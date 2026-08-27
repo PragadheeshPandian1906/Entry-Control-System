@@ -1,0 +1,9 @@
+venv/
+__pycache__/
+*.pyc
+database/*.db
+uploads/*.jpg
+registered_faces/*.jpg
+logs/*.log
+models/*.pt
+.env

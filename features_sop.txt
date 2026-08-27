@@ -1,0 +1,24 @@
+multiple plates for user - number plate as array for one user.
+blacklist plates
+Time-Restricted Access
+Low-confidence re-scan prompt — if OCR or face-match confidence is borderline (close to the threshold), prompt the dashboard user to recapture the frame before logging a failure, cutting down on false "unknown vehicle" results from a single bad frame.
+
+Basic daily summary — a simple /api/logs/summary endpoint and dashboard card showing today's counts (granted / denied / total), no charting library needed to start.
+Guest pass mode — a lightweight, time-limited entry (e.g. "valid for the next 2 hours") for visitors, without requiring full user registration — just a plate number and an expiry timestamp.
+
+Log search/filter — filter the Entry Logs table by date range, plate number, or decision, using the data that's already being recorded — purely a frontend/query addition, no new pipeline logic.
+
+
+
+Adding ML model based on entry log table
+
+
+WhatsApp / SMS messaging for the security to know about the entry of a user.
+
+B. Visitor Temporary Pass Generation (QR/OTP Backup)
+The Concept: Allow registered hosts to invite guests without manually pre-registering their faces or license plates into the main database.
+
+Implementation:
+
+Hosts generate a temporary One-Time Pass (OTP) or QR code via a simple dashboard.
+

@@ -1,0 +1,48 @@
+# fastapi==0.111.0
+# uvicorn[standard]==0.30.1
+# python-multipart==0.0.9
+# sqlalchemy==2.0.30
+# opencv-python-headless==4.9.0.80
+# numpy==1.26.4
+# Pillow==10.3.0
+# jinja2==3.1.4
+# python-dotenv==1.0.1
+
+# # OCR (auto-downloads its own detection/recognition models on first run)
+# paddlepaddle==2.6.1
+# paddleocr==2.7.3
+
+# # Face detection + recognition (auto-downloads 'buffalo_l' model pack on first run)
+# insightface==0.7.3
+# onnxruntime==1.18.0
+
+# # Optional: only needed if you plug in a custom YOLO license-plate detector
+# # (see config.py -> USE_YOLO_PLATE_DETECTOR). Not required for default mode.
+# ultralytics==8.2.18
+
+fastapi==0.111.0
+uvicorn[standard]==0.30.1
+python-multipart==0.0.9
+sqlalchemy==2.0.30
+opencv-python-headless==4.9.0.80
+numpy==1.26.4
+Pillow==10.3.0
+jinja2==3.1.4
+python-dotenv==1.0.1
+
+# OCR (auto-downloads its own detection/recognition models on first run)
+# NOTE: paddlepaddle 3.x is a non-backward-compatible break from 2.x, so it
+# requires the paddleocr 3.x API (different init args + result format).
+# Pinned to 3.1.1 rather than latest: paddleocr 3.7.0 has an open bug
+# (NotImplementedError during text detection) specifically against
+# paddlepaddle 3.3.1 — see PaddlePaddle/PaddleOCR issue #18162.
+# paddlepaddle==3.3.1
+# paddleocr==3.1.1
+
+# # Face detection + recognition (auto-downloads 'buffalo_l' model pack on first run)
+# insightface==0.7.3
+# onnxruntime==1.18.0
+
+# # Optional: only needed if you plug in a custom YOLO license-plate detector
+# # (see config.py -> USE_YOLO_PLATE_DETECTOR). Not required for default mode.
+# ultralytics==8.2.18

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>AI Smart Entry Control System</title>
+<link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+
+<header>
+  <h1>🚗 AI Smart Entry Control System</h1>
+  <nav>
+    <button class="tab-btn active" data-tab="entry">Live Entry Check</button>
+    <button class="tab-btn" data-tab="register">Register User</button>
+    <button class="tab-btn" data-tab="logs">Entry Logs</button>
+  </nav>
+</header>
+
+<main>
+
+  <!-- ===== ENTRY CHECK TAB ===== -->
+  <section id="entry" class="tab-panel active">
+    <div class="camera-column">
+      <video id="video" autoplay playsinline></video>
+      <canvas id="canvas" hidden></canvas>
+      <button id="captureBtn" class="primary-btn">📸 Capture &amp; Check Entry</button>
+    </div>
+
+    <div class="result-column">
+      <div id="resultCard" class="result-card idle">
+        <p class="hint">Point the webcam at the phone (showing the vehicle plate) and the driver's face, then click "Capture &amp; Check Entry".</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== REGISTER TAB ===== -->
+  <section id="register" class="tab-panel">
+    <div class="camera-column">
+      <video id="regVideo" autoplay playsinline></video>
+      <canvas id="regCanvas" hidden></canvas>
+      <button id="regCaptureBtn" class="secondary-btn">📸 Capture Face</button>
+      <p id="regCaptureStatus" class="hint"></p>
+    </div>
+
+    <div class="result-column">
+      <form id="registerForm">
+        <label>Name<input type="text" id="regName" required></label>
+        <label>Vehicle Type
+          <select id="regVehicleType">
+            <option>Car</option>
+            <option>Bike</option>
+            <option>Van</option>
+            <option>Other</option>
+          </select>
+        </label>
+        <label>Plate Number<input type="text" id="regPlate" placeholder="TN09AB1234" required></label>
+        <button type="submit" class="primary-btn">Register User</button>
+      </form>
+      <div id="registerStatus"></div>
+    </div>
+  </section>
+
+  <!-- ===== LOGS TAB ===== -->
+  <section id="logs" class="tab-panel">
+    <button id="refreshLogsBtn" class="secondary-btn">🔄 Refresh</button>
+    <table id="logsTable">
+      <thead>
+        <tr>
+          <th>Time</th><th>Plate</th><th>OCR conf.</th><th>Matched User</th>
+          <th>Face Sim.</th><th>Plate ✓</th><th>Face ✓</th><th>Decision</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </section>
+
+</main>
+
+<script src="/static/js/app.js"></script>
+</body>
+</html>
